@@ -1,0 +1,105 @@
+#:kivy 2.0.0
+<Tela>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: (1,0.5)
+            padding: 20
+            orientation: "vertical"
+            GridLayout:
+                cols:1
+                Label:
+                    text:"digite o nome para pesquisa"
+                TextInput:
+                    size_hint_y:0.5
+                    id:nome
+            Button:
+                size_hint: 0.2, 0.2
+                pos_hint: {'center_x': 0.5}
+                rgba:(1,1,1,1)
+                text: "Pesquisar"
+                on_release: root.criar_thread_pesquisa()
+        GridLayout:
+            id:resultado
+            cols:1
+    BoxLayout:
+        size_hint: (0.7,1)
+        id:final
+        orientation: "vertical"
+        Label:
+            id: codigo_jogo
+            text: "codigo de jogo não selecionado"
+        GridLayout:
+            size_hint: (1,0.5)
+            cols:3
+            id: selecionador
+            padding:20
+        BoxLayout:
+            id:finalizador
+            orientation: "horizontal"
+            padding:10
+<FilterDropDown>:
+    Button:
+        text:"recent"
+        id: recent
+        size_hint_y: None
+        height: 44
+        on_release: root.select("recent")
+    Button:
+        text:"updated"
+        id: updated
+        size_hint_y: None
+        height: 44
+        on_release: root.select("updated")
+
+<LanguageDropDown>:
+    Button:
+        text:"english"
+        id: english
+        size_hint_y: None
+        height: 44
+        on_release: root.select("english")
+    Button:
+        text:"portuguese"
+        id: portuguese
+        size_hint_y: None
+        height: 44
+        on_release: root.select("portuguese")
+
+<TypeDropDown>:
+    Button:
+        text:"positive"
+        id: positive
+        size_hint_y: None
+        height: 44
+        on_release: root.select("positive")
+    Button:
+        text:"negative"
+        id: negative
+        size_hint_y: None
+        height: 44
+        on_release: root.select("negative")
+    Button:
+        text:"all"
+        id: all_type
+        size_hint_y: None
+        height: 44
+        on_release: root.select("all")
+
+<TypeButton>:
+    id:type
+    text:"type"
+
+<FilterButton>:
+    id:filter
+    text:"sort by"
+
+<LanguageButton>:
+    id:language
+    text:"language"
+        
+        
+
+                    
+                    
+                
